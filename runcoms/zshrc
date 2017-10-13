@@ -12,5 +12,65 @@ fi
 
 # Customize to your needs...
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+alias man="mand"
+alias bru="brew update && brew upgrade"
+
+source $HOME/.syntra/small
+
+HISTFILE=~/.zsh_history
+HISTSIZE=1000000
+SAVEHIST=1000000
+
+# Disable beep
+setopt no_beep
+
+# Disable flow control
+setopt no_flow_control
+
+# Do not quit zsh with Ctrl + D
+setopt ignore_eof
+
+# Handle '#' or later as a comment
+setopt interactive_comments
+
+# Cd with just the directory name
+setopt auto_cd
+
+# pd automatically when you cd
+setopt auto_pushd
+
+# Do not add duplicate directories
+setopt pushd_ignore_dups
+
+# Share history with simultaneous zsh
+setopt share_history
+
+# Do not leave the same command in the history
+setopt hist_ignore_all_dups
+
+# Do not leave command lines beginning with spaces in the history
+setopt hist_ignore_space
+
+# Delete extra space when saving to history
+setopt hist_reduce_blanks
+
+#Append history to the history file (no overwriting)
+setopt appendhistory     
+
+#Share history across terminals
+setopt sharehistory      
+
+#Immediately append to the history file, not just when a term is killed
+setopt incappendhistory  
+
+# Use sophisticated wildcard expansion
+setopt extended_glob
+
+# Whenever the user enters a line with  history  expansion,  don't
+#               execute  the  line  directly; instead, perform history expansion
+#               and reload the line into the editing buffer.
+setopt hist_verify
