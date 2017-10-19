@@ -60,13 +60,13 @@ setopt hist_ignore_space
 setopt hist_reduce_blanks
 
 #Append history to the history file (no overwriting)
-setopt appendhistory     
+setopt appendhistory
 
 #Share history across terminals
-setopt sharehistory      
+setopt sharehistory
 
 #Immediately append to the history file, not just when a term is killed
-setopt incappendhistory  
+setopt incappendhistory
 
 # Use sophisticated wildcard expansion
 setopt extended_glob
@@ -75,3 +75,9 @@ setopt extended_glob
 #               execute  the  line  directly; instead, perform history expansion
 #               and reload the line into the editing buffer.
 setopt hist_verify
+
+# matches case insensitive for lowercase
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# pasting with tabs doesn't perform completion
+zstyle ':completion:*' insert-tab pending
